@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>EECS 348 Lab Three Practice Three</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            margin-top: 5px;
+            padding: 5px;
+            width: 250px;
+        }
+  </style>
+</head>
+<body>
+  <h1>EECS 348 Lab Three Practice Three</h1>
+
+  <label for="pwd1">First Password:</label>
+  <input type="password" id="pwd1" name="pwd1">
+
+  <label for="pwd2">Second Password:</label>
+  <input type="password" id="pwd2" name="pwd2">
+
+  <button onclick="validatePasswords()">Validate Your Passwords</button>
+
+  <script>
+    function validatePasswords() {
+      let pwd1 = document.getElementById("pwd1").value;
+      let pwd2 = document.getElementById("pwd2").value;
+
+      if (pwd1 !== pwd2) {
+        alert("Passwords don't match!")
+        return;
+      }
+
+      if (pwd1.length < 8 || pwd2.length < 8) {
+        alert("Passwords must be at least 8 characters long!");
+        return;
+      }
+
+      alert("Passwords are valid and match!")
+    }
+  </script>
+</body>
+</html>

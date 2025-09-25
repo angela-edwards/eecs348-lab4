@@ -1,0 +1,45 @@
+<html>
+<head>
+    <style>
+        #paragraph {
+            border: 2px solid black;
+            background-color: white;
+            padding: 2px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family:Arial, Helvetica, sans-serif">EECS Lab 3: Practice 2</h1>
+    <p id="paragraph">A person who thinks all the time has a lot of thoughts.</p>
+
+    Border R(0-255): <input type="text" id="borderR"><br>
+    Border G(0-255): <input type="text" id="borderG"><br>
+    Border B(0-255): <input type="text" id="borderB"><br>
+    Border Width: <input type="text" id="borderWidth"><br>
+
+    Background R(0-255): <input type="text" id="bgR"><br>
+    Background G(0-255): <input type="text" id="bgG"><br>
+    Background B(0-255): <input type="text" id="bgB"><br><br>
+
+    <button onclick="changeColor()">Change the color</button>
+
+    <script>
+        function changeColor() {
+            let br = document.getElementById("borderR").value;
+            let bg = document.getElementById("borderG").value;
+            let bb = document.getElementById("borderB").value;
+            let bw = document.getElementById("borderWidth").value;
+            
+            let r = document.getElementById("bgR").value;
+            let g = document.getElementById("bgG").value;
+            let b = document.getElementById("bgB").value;
+
+            let paragraph = document.getElementById("paragraph");
+            paragraph.style.borderColor = `rgb(${br}, ${bg}, ${bb})`;  <!--chatgpt lines 38-40-->
+            paragraph.style.borderWidth = bw + "px";
+            paragraph.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+</body>
+</html>
